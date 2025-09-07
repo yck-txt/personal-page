@@ -68,7 +68,7 @@ section {
 html, body {
     background: var(--color-bg);
     color: var(--color-fg);
-    font-family: "Fira Code";
+    font-family: 'Courier New', monospace;
     height: 100%;
     width: 100%;
     position: relative;
@@ -112,7 +112,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
+  font-size: 25px;
   padding-top: 60px;
 }
 
@@ -136,11 +136,11 @@ html, body {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 li {
-  font-size: 16px;
+  font-size: 15px;
   list-style-type: none;
   padding: 5px
 }
