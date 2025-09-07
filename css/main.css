@@ -1,0 +1,192 @@
+:root {
+    --color-bg: #282828;
+    --color-fg: #EADBB2;
+    --color-link: #8F9191;
+    --color-link-visited: #668F8B;
+    --color-link-hover: #FA7921 ;
+}
+
+
+
+ @media (prefers-reduced-motion: no-preference) {
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+		scroll-padding: 0;
+		scrollbar-width: auto;
+	}
+	section {
+		scroll-snap-align: start;
+		scroll-margin: 0;
+	}
+}
+
+section {
+	min-height: 100vh;
+}
+
+
+/* Colored sections */
+
+#part_1 {
+	background: #fffbf0;
+}
+
+#part_2 {
+	background: #ebf5d7;
+}
+
+#part_2 img,
+#part_5 img {
+	float: right;
+	margin-left: 1em;
+}
+
+#part_3 {
+	background: #ffebe6;
+}
+
+#part_4 {
+	background: #e6f2f7;
+}
+
+@media screen and (max-width: 32em) {
+	section h2 {
+		font-size: 2em;
+	}
+	section p {
+		width: 90%;
+		left: 5%;
+		margin-top: 0;
+	}
+}
+
+
+html, body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: "Fira Code";
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 460px 600px 1fr;
+    grid-template-areas:
+    ". left right .";
+    column-gap: 80px;
+    justify-items: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.left-container {
+    grid-area: left;
+    aspect-ratio: 1/1;
+    height: 50%;
+    width: 100%;
+}
+
+.right-container {
+    grid-area: right;
+    height: 50%;
+    width: 100%;
+}
+
+.gif img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.favicon {
+    margin-right: var(--spacing-s);
+    height: 1rem;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  padding-top: 60px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+
+.bookmarks {
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+li {
+  font-size: 16px;
+  list-style-type: none;
+  padding: 5px
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+.blinking {
+  animation: opacity 1s ease-in-out infinite;
+  opacity: 1;
+}
+
+#skip-to-top {
+	position: fixed;
+	bottom: 1em;
+	right: 50%;
+	background-color: var(--color-link-visited);
+	color: var(--color-fg);
+	padding: 1em 2em;
+}
+
+#skip-to-top:hover {
+	background-color: var(--color-link-hover);
+}
+
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
