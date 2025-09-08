@@ -88,7 +88,21 @@ html, body {
 .left-container {
     grid-area: left;
     aspect-ratio: 1/1;
+    height: 15%;
+    width: 100%;
+}
+
+.left-container-h50 {
+    grid-area: left;
+    aspect-ratio: 1/1;
     height: 50%;
+    width: 100%;
+}
+
+.left-container-h0 {
+    grid-area: left;
+    aspect-ratio: 1/1;
+    height: 0%;
     width: 100%;
 }
 
@@ -99,8 +113,8 @@ html, body {
 }
 
 .gif img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .favicon {
@@ -137,6 +151,15 @@ html, body {
 
 .title {
   font-size: 15px;
+  color: var(--color-fg);
+}
+
+.title_link{
+    color: var(--color-fg);
+}
+
+.img_roundborder_5 {
+  border-radius: 5%;
 }
 
 li {
