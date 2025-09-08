@@ -44,4 +44,20 @@ function showSlides(n) {
   }
   $(slides[slideIndex-1]).css("display", "block");
   $(dots[slideIndex-1]).addClass("active")
+  updateSlidecounter(slideIndex);
 } 
+
+function updateSlidecounter(currentSlide)
+{
+        let slides = $(".mySlides");
+        let slidescount= slides.length;
+        let slidecounter =$("#slidescount" + currentSlide);
+
+        if(slidescount > 0){
+            slidecounter.text(currentSlide + " / " + slidescount)
+        }
+        else{
+            slidecounter.text(0 + " / " + 0)
+        }
+
+}
