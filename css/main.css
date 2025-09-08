@@ -99,8 +99,8 @@ html, body {
 }
 
 .gif img {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .favicon {
@@ -137,6 +137,11 @@ html, body {
 
 .title {
   font-size: 15px;
+  color: var(--color-fg);
+}
+
+.title_link{
+    color: var(--color-fg);
 }
 
 li {
