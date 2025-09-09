@@ -6,7 +6,15 @@ table {
 
 td, th {
   /* border: 1px solid var(--color-fg); */
-   border-style: none;
-  text-align: left;
+  border-style: none;
+  text-align: center;
+  border-radius: 10px;
   padding: 8px;
+}
+
+.desctd{
+  color: var(--color-bg);
+  /* border: 1px solid var(--color-fg); */
+  text-align: left;
+  border-radius: 10px;
 }
