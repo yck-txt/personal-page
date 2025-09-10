@@ -9,6 +9,8 @@
     <title>~/mainpage/yp</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/table.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.rtl.min.css">
     <link rel="stylesheet" type="text/css" href="css/slideshow.css">
     <script type="text/javascript" src="js/jquery_3.7.1.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -21,62 +23,6 @@
         let slideIndex = 1;
         showSlides(slideIndex);
     });
-//     $(document).scroll(function () {
-//     $('section').each(function () {
-//         if($(this).position().top <= $(document).scrollTop() && ($(this).position().top + $(this).outerHeight()) > $(document).scrollTop()) {
-//             var currentpart = $(this).attr('id');
-//             console.log(window.location.href);
-//             var section = window.location.href;
-//             var sectionClean = section.substring(section.indexOf("#"));
-//             window.location.hash = sectionClean;
-
-//             console.log(window.location.hash);
-//             // console.log(section);
-//             // console.log(sectionClean);
-//         }
-//     });
-//     });
-// //  stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-//     function isElementInViewport (el) {
-//       //special bonus for those using jQuery
-//       if (typeof jQuery === "function" && el instanceof jQuery) {
-//         el = el[0];
-//       }
-//       var rect = el.getBoundingClientRect();
-//       return (
-//         rect.top >= 0 &&
-//         rect.left >= 0 &&
-//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
-//         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
-//       );
-//     }
-
-
-    // $(".part").click(function (e) {
-    //   e.preventDefault();
-    //   var section = this.href;
-    //   var sectionClean = section.substring(section.indexOf("#"));
-    //   $("html, body").animate({
-    //     scrollTop: $(sectionClean).offset().top
-    //   }, 1000, function () {
-    //     window.location.hash = sectionClean;
-    //   });
-    // });
-     // listen for the scroll event
-    // $(document).on("scroll", function() {
-    //   console.log("onscroll event fired...");
-    //   // check if the anchor elements are visible
-    //   $("section").each(function (idx, el) {
-    //     if ( isElementInViewport(el) ) {
-    //         console.log($(el).attr('href'));
-    //         var urlHash = $(el).attr('href');
-    //         var section = this.href;
-    //         var sectionClean = section.substring(section.indexOf("#"));
-    //          window.location.hash = sectionClean;
-    //       // update the URL hash
-    //     }
-    //   });
-    // });
 </script>
 <header>
     <a href="#part_start" id="skip-to-top">skip to top</a>
@@ -833,7 +779,7 @@
         </section>
         <section id="part_random_movies" tabindex="1">
             <div class="container">
-                <div class="left-container">
+                <div class="left-container-h0">
                     <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/&name=gundam_&bg=3c3836&bgvignette=false&bgpattern=false"
                         style="height: 750px;width:100%;border:none;"></object>
                 </div>
@@ -847,6 +793,7 @@
             </div>
         </section>
         <section id="part_random_games" tabindex="1">
+  
                     <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/&name=gundam_&bg=3c3836&bgvignette=false&bgpattern=false"
                         style="height:750px;width:100%;border:none;"></object>
         </section>
@@ -855,14 +802,60 @@
                         style="height:750px;width:100%;border:none;"></object>
         </section>
         <section id="part_game_wolverine" tabindex="1">
-                    <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/wolverine/&name=wolverine_&bg=3c3836&bgvignette=false&bgpattern=false"
-                        style="height:750px;width:100%;border:none;"></object>
+   
+
+                <div class="row">
+                    <div class="col">
+                        <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/wolverine/&name=wolverine_&bg=3c3836&bgvignette=false&bgpattern=false"
+                            style="height:750px;width:100%;border:none;"></object>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="gameboxes/originswolverine.html" target="_blank">
+                            X-Men Origins: Wolverine - Details
+                        </a>
+                    </div>
+                </div>
         </section>
         
         <section id="part_game_riddick" tabindex="1">
-                    <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/riddick/&name=riddick_&bg=3c3836&bgvignette=false&bgpattern=false"
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/riddick/&name=riddick_&bg=3c3836&bgvignette=false&bgpattern=false"
                         style="height:750px;width:100%;border:none;"></object>
-                        <p>The Chronicles of Riddick: Escape from Butcher Bay </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col align-self-center">
+                        <p>The Chronicles of Riddick: Assault on Dark Athena </p>
+
+                        <table>
+                            <colgroup>
+                                <col span="2">
+                                <col span="1" style="border: 1px solid #a89984; text-align: right;">
+                            </colgroup>
+                            <tr>
+                                <td>
+                                    <img src="https://icons.duckduckgo.com/ip3/bigboxcollection.com.ico" class="favicon-xl" alt="bigboxcollection favicon">
+                                </td>
+                                <td class="td-align-l">
+                                    <a href="https://bigboxcollection.com/Shelf" target="_blank">
+                                    Release date
+                                    </a>
+                                </td>
+                                <td class="td-align-l">
+                                    <p> 
+                                        April 7, 2009 on Xbox 360 <br>
+                                        April 24, 2009 on Windows
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>   
         </section>
     </div>
 </body>
