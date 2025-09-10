@@ -18,3 +18,11 @@ td, th {
   text-align: left;
   border-radius: 10px;
 }
+
+.td-align-r{
+  text-align: right;
+}
+
+.td-align-l{
+  text-align: left;
+}

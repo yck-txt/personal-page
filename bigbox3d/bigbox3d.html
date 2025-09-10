@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <body style="margin: 0px; overflow: hidden" oncontextmenu="return false;">
+    <div id="dynamic-data">
+      <script id="config">
+        /*
+          ###################
+          ## YOUR DEFAULTS ##
+          ###################
+          
+          If you use bigbox3d.php, you don't have to touch anything in here. Because bigbox3d.php utilizes bigbox3d.config.json
+          If you don't use bigbox3d.php you can set your defaults below. Create a backup before updating BigBox3D - because bigbox3d.html will be overwritten!
+
+        */
+        const config = {
+          // host: "",                                                               // the host of your images, typically the same host, bigbox3d.html resides at (default: "", e.g. "https://example.com")
+          // path: "",                                                               // base path to image files (default: "", e.g. "/bigbox3d/img/")
+          // ext: "jpg",                                                             // the file extension of the box texture files (default: "jpg", e.g. "png" if you use .png files)
+          // bg: "ffffff",                                                           // the static background color, IMPORTANT: please always use 6 hex characters! (default: "000000", e.g. "ffffff" if you want a white background)
+          // bgvignette: true,                                                       // use a vignette effect for the background (default: true)
+          // bgpattern: true,                                                        // use a pattern effect for the background (default: true)
+          // bgext: "jpg",                                                           // the file extension of the background file (provide this if you have a background image file with a different extension than the texture files of the box), e.g.
+          //                                                                            "?bgext=gif" if you have .gif background file
+          //                                                                            "?bgext=mp4" if you have a video file (for videos currently only mp4 is supported)
+          // bginterval: 10,                                                         // the interval in seconds to change the background image (applies if you have multiple background images)
+          // extlink: "https://github.com/theMK2k/bigbox3d",                         // an external link to be displayed in the bottom left corner
+          // extlink_innerhtml: "scanned by MK2k, presented with <b>Big Box 3D</b>", // the innerHTML of the external link,
+          // rotation_speed: 20,                                                     // the rotation speed of the box when mouse-dragged (default: 20, range: 1-100)
+          // rotation_amortization: 0.91,                                            // the amortization of the rotation speed when mouse released (default: 0.91, range: 0.1-1.0)
+          // rotation_initial_x: 0.15,                                               // initial rotation on the x-axis (default: 0.15, range: 0.0-1.0)
+          // rotation_initial_y: -0.15,                                              // initial rotation on the y-axis (default: -0.15, range: 0.0-1.0)
+        };
+      </script>
+    </div>
+
+    <script src="gl-matrix-min.js"></script>
+
+    <script id="shader-fs" type="x-shader/x-fragment">
+      precision mediump float;
+
+      varying vec2 vTextureCoord;
+
+      uniform sampler2D uSampler;
+
+      void main(void) {
+          gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+      }
+    </script>
+
+    <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 aVertexPosition;
+      attribute vec2 aTextureCoord;
+
+      uniform mat4 uMVMatrix;
+      uniform mat4 uPMatrix;
+
+      varying vec2 vTextureCoord;
+
+
+      void main(void) {
+          gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+          vTextureCoord = aTextureCoord;
+      }
+    </script>
+
+    <div id="debug" style="height: 1000"></div>
+
+    <div id="gldiv">
+      <canvas id="glcanvas"> </canvas>
+      <div id="bgfilter"></div>
+      <div id="bg0"></div>
+      <div id="bg1"></div>
+      <video id="bgvideo" autoplay muted loop>
+        <source id="bgvideosource" />
+      </video>
+    </div>
+
+    <div id="loading">
+      loading... (<span id="loading-counter">0</span> /
+      <span id="loading-total">6</span>)
+    </div>
+
+    <a
+      id="openexclusively"
+      title="Open exclusively in a new tab"
+      href=""
+      target="_blank"
+    ></a>
+
+    <div id="extlink"><a id="extlink_a" href="" target="_blank"></a></div>
+
+    <div
+      id="bgvideocontrols"
+      title="Play/Pause the background video"
+      onclick="bgVideoPlayPause()"
+    >
+      play/pause
+    </div>
+
+    <script src="bigbox3d.js"></script>
+  </body>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no" />
+
+    <!-- Opengraph Tags (Facebook) -->
+    <meta property="og:title" content="Click here to view in interactive 3D" />
+    <meta property="og:image" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" />
+  </head>
+
+  <style>
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+
+    #gldiv {
+      position: absolute;
+      top: 0em;
+      bottom: 0em;
+      left: 0em;
+      right: 0em;
+      overflow: hidden;
+      z-index: 1;
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    #bg0 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transition: opacity 1s;
+      transition-timing-function: ease-in-out;
+      opacity: 1;
+    }
+
+    #bg1 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transition: opacity 1s;
+      transition-timing-function: ease-in-out;
+      opacity: 0;
+    }
+
+    #bgfilter {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      transition: opacity 1s;
+      transition-timing-function: ease-in-out;
+      opacity: 0;
+      background-size: auto;
+      background-position: 0% 0%;
+      background-image: url("bg-pattern.png");
+    }
+
+    #bgvideo {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transition: opacity 1s;
+      transition-timing-function: ease-in-out;
+      opacity: 0;
+    }
+
+    #glcanvas {
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 3;
+      /* background-color: black; */ /* transparent doesn't work */
+      position: absolute;
+    }
+
+    #loading {
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      opacity: 1;
+      width: 100%;
+      margin-top: 0.5em;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 0 2px #000;
+      font-size: 12px;
+      z-index: 3;
+      transition-timing-function: ease;
+      transition: opacity 0.5s;
+    }
+
+    #extlink {
+      position: absolute;
+      bottom: 0.3em;
+      left: 0.5em;
+      text-align: left;
+      font-size: 10px;
+      z-index: 4;
+      color: #fff;
+      text-shadow: 0 0 2px #000;
+      opacity: 0.5;
+      transition: opacity 0.5s;
+    }
+
+    #extlink a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #extlink:hover {
+      opacity: 1;
+    }
+
+    #openexclusively {
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      text-decoration: none;
+      background-image: url(openexclusively.png);
+      background-position: 50% 50%;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      transition: opacity 0.5s;
+      width: 1.2em;
+      height: 1.2em;
+      z-index: 4;
+    }
+
+    #openexclusively:hover {
+      opacity: 1;
+    }
+
+    #bgvideocontrols {
+      display: none;
+      position: absolute;
+      bottom: 0.3em;
+      right: 0.5em;
+      text-align: right;
+      font-size: 16px;
+      z-index: 4;
+      color: #fff;
+      text-shadow: 0 0 2px #000;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.5s;
+    }
+
+    #bgvideocontrols:hover {
+      opacity: 1;
+    }
+  </style>
+</html>
