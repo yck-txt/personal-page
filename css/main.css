@@ -141,6 +141,15 @@ html, body {
   /* padding-top: 60px; */
 }
 
+.head-color-o {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  color: var(--color-link-hover);
+  /* padding-top: 60px; */
+}
+
 .category {
   display: flex;
   flex-direction: column;

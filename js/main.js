@@ -32,11 +32,9 @@ function currentSlide(n) {
 function showSlides(n) {
   let slides = $(".mySlides");
   let dots = $(".dot");
-  console.log(slides.length);
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (let i = 0; i < slides.length; i++) {
-    console.log(slides[0])
     $(slides[i]).css("display", "none");
   }
   for (let i = 0; i < dots.length; i++) {
