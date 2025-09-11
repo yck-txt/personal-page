@@ -15,6 +15,9 @@
     <script type="text/javascript" src="js/jquery_3.7.1.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
+    <!-- style.css CSS Link for 3D model viewer-->
+    <link type="text/css" href="css/styles.css" rel="stylesheet"/>
+
     
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 </head>
@@ -78,6 +81,7 @@
                             <li><a class="part"  href="#part_random_favsites">websites</a></li>
                             <li><a class="part" href="#part_random_games">games</a></li>
                             <li><a class="part" href="#part_random_movies">movies</a></li>
+                            <li><a class="part" href="#part_random_gundam">gundam</a></li>
                             <li><a class="part" href="#part_random_tools">tools</a></li>
                         </div>
                     </div>
@@ -87,6 +91,8 @@
                             <li class="title"><a class="part" href="#part_game" style="color: #fbf1c7;">3D game box</a></li>
                             <li><a class="part"  href="#part_game_dishonored2">dishonored 2</a></li>
                             <li><a class="part"  href="#part_game_wolverine">X-Men Origins: Wolverine</a></li>
+                            <li><a class="part"  href="#part_game_prompts">Molotov Cocktail 3D</a></li>
+                            <li><a class="part"  href="molotov.html">Molotov Cocktail 3D Test</a></li>
                         </div>
                     </div>
 
@@ -385,7 +391,7 @@
 
                     <div class="right-container">
                         <div class="head">
-                            <p>> contact<span class="blinking">_</span></p>
+                            <p>> display<span class="blinking">_</span></p>
                         </div>
                          <table>
                             <tr>
@@ -733,8 +739,10 @@
                                 </td>
                                 <td class="td-align-l">
                                     <p> 
-                                        Collection of 3D scanned game packages from different eras.
-                                         The whole package can be moved and viewed to catch every detaik.
+                                        Collection of 3D scanned game boxes or packages from different eras.
+                                         The whole box can be moved and viewed to catch every detail. 
+                                         I'm trying to implement something similar to my site. 
+                                         Maybe not in this extent but to show of some of my collection and favourite games.
                                     </p>
                                 </td>
                             </tr>
@@ -779,7 +787,84 @@
         </section>
         <section id="part_random_movies" tabindex="1">
             <div class="container">
-                <div class="left-container-h0">
+                <div class="left-container">
+                        <div class="head">
+                            <p>> movies<span class="blinking">_</span></p>
+                        </div>
+                </div>
+                <div class="right-container">
+                    <table>
+                        <!-- <colgroup>
+                            <col span="2">
+                            <col span="1" style="border: 1px solid #a89984; text-align: right;">
+                        </colgroup> -->
+                        <tr>
+                            <td>
+                                <img src="https://icons.duckduckgo.com/ip3/rottentomatoes.com.ico" class="favicon-xl" alt="rottentomatoes favicon">
+                            </td>
+                            <td class="td-align-l">
+                                <a  href="molotov.html" target="_blank">
+                                The Nice Guys (2016)
+                                </a>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                    Action-Comedy with Ryan Gosling and Russell Crowe
+                                </p>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                    5/5
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://icons.duckduckgo.com/ip3/rottentomatoes.com.ico" class="favicon-xl" alt="rottentomatoes favicon">
+                            </td>
+                            <td class="td-align-l">
+                                <a  href="tf2_spy.html" target="_blank">
+                                    Akira (1988)
+                                </a>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                    Legendary Japanese action anime movie
+                                </p>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                    5/5
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="https://icons.duckduckgo.com/ip3/rottentomatoes.com.ico" class="favicon-xl" alt="rottentomatoes favicon">
+                            </td>
+                            <td class="td-align-l">
+                                <a  href="tf2_spy_blue.html" target="_blank">
+                                    Napoleon Dynamite (2004)
+                                </a>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                        The little bit different Coming-Of-Age movie. Sometimes super weird, sometime super funny but absolutley worth a watch.
+                                </p>
+                            </td>
+                            <td class="td-align-l">
+                                <p> 
+                                    4/5
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="part_random_gundam" tabindex="1">
+            <div class="container">
+                <div class="left-container-nh">
                     <object data="/personalpage/bigbox3d/bigbox3d.html?path=/personalpage/bigbox3d/img/&name=gundam_&bg=3c3836&bgvignette=false&bgpattern=false"
                         style="height: 750px;width:100%;border:none;"></object>
                 </div>
@@ -818,6 +903,30 @@
                     </div>
                 </div>
         </section>
+
+        <section id="part_game_prompts" tabindex="1">
+                    <model-viewer src="model_p2_molotov.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+                    <div class="progress-bar hide" slot="progress-bar">
+                        <div class="update-bar"></div>
+                    </div>
+                    <button slot="ar-button" id="ar-button">
+                        View in your space
+                    </button>
+                    <div id="ar-prompt">
+                        <img src="ar_hand_prompt.png">
+                    </div>
+                    </model-viewer>  
+                    <script src="script.js"></script>
+                    <!-- Loads <model-viewer> for browsers: -->
+                    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+                <div class="row">
+                    <div class="col">
+                                                <a href="gameboxes/dishonored2.html" target="_blank">
+                        Molotov Cocktail 3D
+                        </a>
+                    </div>
+                </div>
+        </section>
         
         <section id="part_game_riddick" tabindex="1">
                 <div class="row">
@@ -837,17 +946,98 @@
                             </colgroup>
                             <tr>
                                 <td>
-                                    <img src="https://icons.duckduckgo.com/ip3/bigboxcollection.com.ico" class="favicon-xl" alt="bigboxcollection favicon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048">
+                                        <path fill="currentColor" d="M2048 128v1792H0V128h384V0h128v128h1024V0h128v128zM128 256v256h1792V256h-256v128h-128V256H512v128H384V256zm1792 1536V640H128v1152zm-512-896v640h-128v-486q-27 14-62 26t-66 12V960q12 0 31-6t39-15t36-21t22-21v-1zm-384 192q0 39-11 70t-31 58t-44 51t-51 46t-51 46t-47 49h235v128H640v-36q0-19-1-38t4-38t10-36q11-27 33-53t50-53t55-51t51-49t39-47t15-47q0-27-19-45t-45-19q-23 0-40 14t-23 37l-125-26q6-33 23-61t44-48t57-32t64-12q40 0 75 15t61 41t41 61t15 75" />
+                                    </svg>
                                 </td>
                                 <td class="td-align-l">
-                                    <a href="https://bigboxcollection.com/Shelf" target="_blank">
                                     Release date
-                                    </a>
                                 </td>
                                 <td class="td-align-l">
                                     <p> 
                                         April 7, 2009 on Xbox 360 <br>
                                         April 24, 2009 on Windows
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <g fill="none">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M16.031 3.887H7.97a5.22 5.22 0 0 0-5.219 5.22v8.265c0 2.075 2.533 3.085 3.962 1.581l2.976-3.134h4.624l2.875 3.46c1.374 1.654 4.063.682 4.063-1.467V9.106a5.22 5.22 0 0 0-5.219-5.219M8.138 8.39v4m-2-2h4" />
+                                            <circle cx="14.662" cy="9.39" r="1" fill="currentColor" />
+                                            <circle cx="16.862" cy="11.59" r="1" fill="currentColor" />
+                                        </g>
+                                    </svg>
+                                </td>
+                                <td class="td-align-l">
+                                    Versions/Plattforms
+                                </td>
+                                <td class="td-align-l">
+                                    <p> 
+                                        Xbox 360, PS3, Windows PC, Macintosh
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <g fill="none">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M16.031 3.887H7.97a5.22 5.22 0 0 0-5.219 5.22v8.265c0 2.075 2.533 3.085 3.962 1.581l2.976-3.134h4.624l2.875 3.46c1.374 1.654 4.063.682 4.063-1.467V9.106a5.22 5.22 0 0 0-5.219-5.219M8.138 8.39v4m-2-2h4" />
+                                            <circle cx="14.662" cy="9.39" r="1" fill="currentColor" />
+                                            <circle cx="16.862" cy="11.59" r="1" fill="currentColor" />
+                                        </g>
+                                    </svg>
+                                </td>
+                                <td class="td-align-l">
+                                    Genre
+                                </td>
+                                <td class="td-align-l">
+                                    <p> 
+                                        Action and Ego-Shooter-Mix
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                                        <path fill="currentColor" d="M1 3.5A2.5 2.5 0 0 1 3.5 1h7A2.5 2.5 0 0 1 13 3.5v1.53a4.5 4.5 0 0 0-1-.004V5H2v5.5A1.5 1.5 0 0 0 3.5 12h2.954l-.72.72a2.5 2.5 0 0 0-.242.28H3.5A2.5 2.5 0 0 1 1 10.5zm7.931 3.224l-.577-.578a.5.5 0 1 0-.708.708l.745.744q.216-.461.54-.874M2 4h10v-.5A1.5 1.5 0 0 0 10.5 2h-7A1.5 1.5 0 0 0 2 3.5zm4.354 2.854a.5.5 0 1 0-.708-.708l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L4.707 8.5zm6.538-.83c.366.042.471.48.21.742l-.975.975a1.507 1.507 0 1 0 2.132 2.132l.975-.975c.261-.261.7-.156.742.21a3.518 3.518 0 0 1-4.676 3.723l-2.726 2.727a1.507 1.507 0 1 1-2.132-2.132L9.168 10.7a3.518 3.518 0 0 1 3.724-4.676" />
+                                    </svg>
+                                </td>
+                                <td class="td-align-l">
+                                    Developer
+                                </td>
+                                <td class="td-align-l">
+                                    <p> 
+                                        <a href="https://www.mobygames.com/company/5626/tigon-studios/" target="_blank">
+                                            Tigon Studios
+                                        </a><br>
+                                        <a href="https://www.starbreeze.com/" target="_blank">
+                                            Starbreeze Studios AB
+                                        </a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20">
+                                        <path fill="currentColor" d="M9.967 8.193L5 13h3v6h4v-6h3zM18 1H2C.9 1 0 1.9 0 3v12c0 1.1.9 2 2 2h4v-2H2V6h16v9h-4v2h4c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2M2.5 4.25a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5m2 0a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5M18 4H6V3h12.019z" />
+                                    </svg>
+                                </td>
+                                <td class="td-align-l">
+                                    Publisher
+                                </td>
+                                <td class="td-align-l">
+                                    <p> 
+                                        <a href="https://atari.com/" target="_blank">
+                                            Atari, Inc.
+                                        </a><br>
+                                        <a href="https://www.mobygames.com/company/1697/akella/" target="_blank">
+                                            Akella
+                                        </a>
+                                        <a href="https://www.vpltd.com/" target="_blank">
+                                            Virtual Programming Ltd.
+                                        </a>
                                     </p>
                                 </td>
                             </tr>

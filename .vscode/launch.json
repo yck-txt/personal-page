@@ -4,11 +4,12 @@
     // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
     {
-        "name": "Launch Chrome",
+        "type": "firefox",
         "request": "launch",
-        "type": "chrome",
-        "url": "http://localhost:8080",
+        "reAttach": true,
+        "name": "Launch index.html",
         "file": "${workspaceFolder}/index.html"
     }
     ]
