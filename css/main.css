@@ -106,6 +106,12 @@ html, body {
     width: 100%;
 }
 
+.left-container-nh {
+    grid-area: left;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
 .right-container {
     grid-area: right;
     height: 50%;
