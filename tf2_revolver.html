@@ -1,11 +1,13 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; blackrose knife blue</title>
+    <title>&lt;model-viewer&gt; revolver spy</title>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" sizes="16x16" href="poster_blackroseblue.webp">
-    <link rel="icon" type="image/png" sizes="32x32" href="poster_blackroseblue.webp">
-    <meta name="description" content="&lt;model-viewer&gt; blackrose knife blue">
+    <link rel="icon" type="image/png" sizes="16x16" href="poster_tf2_c_revolver_s.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="poster_tf2_c_revolver_s.webp">
+    <meta name="description" content="&lt;model-viewer&gt; revolver spy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="css/styles.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/main_3dmodels.css">
@@ -13,17 +15,18 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.rtl.min.css">
   </head>
   <body>
-        <model-viewer src="3dprompt/model_tf2_blackrose_blue.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster_blackroseblue.webp"  shadow-intensity="1" camera-orbit="-260.9deg 105.1deg 30.92m" field-of-view="30deg">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-            <img src="ar_hand_prompt.png">
-        </div>
-        </model-viewer>  
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="model_tf2_c_revolver.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="agx" poster="poster_tf2_c_revolver_s.webp" shadow-intensity="0.73" exposure="1.77" shadow-softness="0.74" environment-image="pillars_1k.hdr" camera-orbit="-266.4deg 86.52deg 41.13m" field-of-view="30deg">
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>  
         <script src="js/script.js"></script>
         <!-- Loads <model-viewer> for browsers: -->
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
@@ -38,7 +41,7 @@
         </div>
         <div class="col">
             <h2>
-                Spy Blackrose Knife
+                Spy Revolver
             </h2>
         </div>
         <div class="col">

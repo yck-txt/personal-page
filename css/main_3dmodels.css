@@ -1,0 +1,55 @@
+:root {
+    --color-bg: #3c3836;
+    --color-fg: #fbf1c7;
+    --color-link: #a89984;
+    --color-link-visited: #b16286;
+    --color-link-hover: #fe8019 ;
+}
+
+html, body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: 'Courier New', monospace;
+    height: 100%;
+    position: relative;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  /* padding-top: 60px; */
+}
+
+.favicon {
+    margin-right: var(--spacing-s);
+    height: 2rem;
+}
+
+.favicon-xl {
+    margin-right: var(--spacing-s);
+    height: 3rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+.title {
+  font-size: 15px;
+  color: var(--color-fg);
+}
+
+.title_link{
+    color: var(--color-fg);
+}
