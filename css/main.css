@@ -39,12 +39,8 @@ section {
 	}
 }
 
-.bg-og {
-  background-color: var(--bs-dark-grey) !important;
-}
 
 html, body{
-    background: var(--color-bg);
     color: var(--color-fg);
     font-family: 'Courier New', monospace !important;
     height: 100%;

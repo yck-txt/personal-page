@@ -46,6 +46,28 @@ $mynewcolor:#77cccc;
 body{
   color: $fg_gu;
   background-color: $bg_gu;
+  background: $bg_gu;
+  font-family: 'Courier New', monospace !important;
+}
+
+.table {
+  --bs-table-color-type: $fg_gu;
+  --bs-table-bg-type: $fg_gu;
+  --bs-table-color-state: $fg_gu;
+  --bs-table-bg-state: $fg_gu;
+  --bs-table-color: $fg_gu;
+  --bs-table-bg: $fg_gu;
+  --bs-table-border-color: $fg_lilac;
+  --bs-table-accent-bg: $fg_lilac;
+  --bs-table-striped-color: $fg_lilac;
+  --bs-table-striped-bg: rgba(var(--bs-emphasis-color-rgb), 0.05);
+  --bs-table-active-color: var(--bs-emphasis-color);
+  --bs-table-active-bg: rgba(var(--bs-emphasis-color-rgb), 0.1);
+  --bs-table-hover-color: var(--bs-emphasis-color);
+  --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.075);
+  color: $fg_gu;
+  background-color: $bg_gu;
+  font-family: 'Courier New', monospace !important;
 }
 
 // .list-group-mine .list-group-item {
