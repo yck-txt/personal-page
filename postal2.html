@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; molotov cocktail</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="poster.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="poster.webp">
+    <meta name="description" content="&lt;model-viewer&gt; molotov cocktail">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="css/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="css/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  </head>
+  <body class="bg-og text-white">
+    <div class="container-xl">
+         <div class="row">
+            <div class="col-2">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292" />
+                    </svg>
+                    Go Back
+                </a>
+            </div>
+            <div class="col">
+                <h2>
+                    Molotov Cocktail
+                </h2>
+            </div>
+            <div class="col">
+                <h2>
+                    Postal 2
+                </h2>
+            </div>
+        </div>
+        <div class="container-xl text-center containercenter">
+            <div class="row row-cols-2 p-5">
+                <div class="col">
+                    <model-viewer src="model_p2_molotov.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-175.7deg 93.28deg 0.8298m" field-of-view="30deg">
+                        <div class="progress-bar hide" slot="progress-bar">
+                            <div class="update-bar"></div>
+                        </div>
+                        <button slot="ar-button" id="ar-button">
+                            View in your space
+                        </button>
+                        <div id="ar-prompt">
+                            <img src="ar_hand_prompt.png">
+                        </div>
+                    </model-viewer>  
+                    <script src="js/script.js"></script>
+                    <!-- Loads <model-viewer> for browsers: -->
+                    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+       
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    Release
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                        April 13, 2003 (Windows)
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            November 2, 2012 Release (Macintosh, Linux)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    Genre
+                                </div>
+                                <div class="col">
+                                    <p>
+                                        Ego-Shooter, Action
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    Developer
+                                </div>
+                                <div class="col">
+                                    <p>
+                                        <a href="https://runningwithscissors.com/" target="_blank">
+                                            RWS, Inc.
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    Publisher
+                                </div>
+                                <div class="col">
+                                    <p>
+                                         <a href="https://runningwithscissors.com/" target="_blank">
+                                            RWS, Inc.
+                                        </a>
+                                        <br>
+                                        <a href="http://www.whiptailinteractive.com/" target="_blank">
+                                            Whiptail Interactive
+                                        </a>
+                                        <br>
+                                        <a href="http://www.akella.ru/" target="_blank">
+                                            Akella (Russia)
+                                        </a>
+                                        <br>
+                                        <a href="http://www.hell-tech.com/" target="_blank">
+                                            hell-tech (Greece)
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
